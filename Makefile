@@ -2,12 +2,18 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++17
 
 # Ejecutables
-all: path_game/path_game soccer_game/soccer_game ucc_lib/ucc_lib
+all: path_game/path_game pipe_game/pipe_game soccer_game/soccer_game ucc_lib/ucc_lib
 
 # =======================
 # PATH_GAME
 # =======================
 path_game/path_game: path_game/main.cpp
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+# =======================
+# PIPE_GAME
+# =======================
+pipe_game/pipe_game: pipe_game/main.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 # =======================
@@ -26,5 +32,5 @@ ucc_lib/ucc_lib: ucc_lib/main.cpp ucc_lib/lib.cpp ucc_lib/lib.h
 # CLEAN
 # =======================
 clean:
-	rm -f path_game/path_game soccer_game/soccer_game ucc_lib/ucc_lib
+	rm -f path_game/path_game pipe_game/pipe_game soccer_game/soccer_game ucc_lib/ucc_lib
 
